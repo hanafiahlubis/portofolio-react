@@ -1,0 +1,72 @@
+/* @tailwind base; */
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.slide-in {
+  animation: slidein 2s;
+  left: 0px;
+}
+
+@keyframes slidein {
+  0% {
+    left: -500px;
+  }
+
+  20% {
+    left: -400px;
+  }
+
+  40% {
+    left: -300px;
+  }
+
+  60% {
+    left: -200px;
+  }
+
+  80% {
+    left: -100px;
+  }
+
+  100% {
+    left: 0px;
+  }
+}
+
+.slide-out {
+  animation: slideout 2s;
+  left: -500px;
+}
+
+@keyframes slideout {
+  0% {
+    left: 0px;
+  }
+
+  20% {
+    left: -100px;
+  }
+
+  40% {
+    left: -200px;
+  }
+
+  60% {
+    left: -300px;
+  }
+
+  80% {
+    left: -400px;
+  }
+
+  100% {
+    left: -500px;
+  }
+}
