@@ -10,7 +10,7 @@
 }
 
 .slide-in {
-  animation: slidein 2s;
+  animation: slidein 0.5s;
   left: 0px;
 }
 
@@ -41,7 +41,7 @@
 }
 
 .slide-out {
-  animation: slideout 2s;
+  animation: slideout 0.5s;
   left: -500px;
 }
 
@@ -69,4 +69,8 @@
   100% {
     left: -500px;
   }
+}
+
+.warna {
+  background-color: #0006;
 }

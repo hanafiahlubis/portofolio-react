@@ -11,9 +11,12 @@ export default function Header() {
         <Link to="/" className="logo p-2">
           <h1 className="text-xs">Ali Hanafiah</h1>
         </Link>
-        <nav className="flex items-center p-2">
+        <nav
+          className={`${
+            openMenu === true ? "hidden" : "flex"
+          } items-center p-2`}
+        >
           <AiOutlineMenu
-            // className={openMenu === false ? "none" : ""}
             onClick={() => {
               setOpenMenu(true);
             }}
@@ -24,7 +27,7 @@ export default function Header() {
         onClick={() => setOpenMenu(false)}
         className={`${
           openMenu ? "block" : "hidden"
-        } w-screen sm:w-full h-full absolute left-0 top-0 z-50`}
+        } w-screen sm:w-full h-full absolute left-0 top-0 z-50 warna`}
       >
         <div
           className={`${
@@ -44,7 +47,7 @@ export default function Header() {
             {/* <li className="flex px-4 py-5"><a href="#Home">Home</a></li> */}
             {pages.map((page, i) => (
               <>
-                <li key={i}>
+                <li key={i} className="flex ml-[20%] mt-[10%]">
                   <NavLink to={page.path}>{page.title}</NavLink>
                 </li>
               </>
