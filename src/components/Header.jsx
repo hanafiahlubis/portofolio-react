@@ -7,7 +7,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="bg-red-300 flex justify-between items-center w-full absolute">
+      <header className="flex justify-between items-center w-full sticky z-30 top-0 py-4 bg-white shadow-sm shadow-black ">
         <Link to="/" className="logo p-2">
           <h1 className="text-xs">Ali Hanafiah</h1>
         </Link>
