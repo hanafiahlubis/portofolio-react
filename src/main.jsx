@@ -4,29 +4,24 @@ import App from "./App.jsx";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home.jsx";
-// import { MdHelp, MdHome, MdInfo } from "react-icons/md";
-// import About from "./pages/About.jsx";
-// import Contact from "./pages/Contact.jsx";
-// import { createRoot } from 'react-dom/client';
+import Projects from "./pages/Projects.jsx";
+import CV from "./pages/CV.jsx";
 export const pages = [
   {
     path: "/",
     element: <Home />,
     title: "Beranda",
-    // icon: MdHome,
   },
-  // {
-  //   path: "/About",
-  //   element: <About />,
-  //   title: "Aturan",
-  //   icon: MdInfo,
-  // },
-  // {
-  //   path: "/Contact",
-  //   element: <Contact />,
-  //   title: "Instruksi",
-  //   icon: MdHelp,
-  // },
+  {
+    path: "/Projects",
+    element: <Projects />,
+    title: "Projects",
+  },
+  {
+    path: "/CV",
+    element: <CV />,
+    title: "CV",
+  },
 ];
 
 const router = createBrowserRouter([
