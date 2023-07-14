@@ -7,16 +7,35 @@ export default function Header() {
 
   return (
     <>
-      <header className="flex justify-between items-center w-full sticky z-30 top-0 py-4 bg-white shadow-sm shadow-black ">
-        <Link to="/" className="logo p-2">
-          <h1 className="text-xs">Ali Hanafiah</h1>
+      <header className="flex justify-between items-center w-full sticky z-30 top-0 py-4 bg-white shadow-sm shadow-black lg:flex-col lg:justify-start lg:w-[72%]">
+        <NavLink
+          to={pages[0].path}
+          className="hidden w-full  h-[62%] items-center lg:flex "
+        >
+          <img
+            src="/Ali Hanafiah.jpeg"
+            alt="sasasa"
+            className="rounded-[50%] w-32 h-32 m-auto"
+          />
+        </NavLink>
+
+        <Link to="/" className="logo p-2 lg:hidden ">
+          <h1 className="text-xl ">Ali Hanafiah</h1>
         </Link>
         <nav
           className={`${
             openMenu === true ? "hidden" : "flex"
-          } items-center p-2`}
+          } items-center p-2 lg:w-full lg:h-[72%] lg:flex-col lg:justify-around lg:pl-20 lg:items-start `}
         >
+          {pages.map((e, i) => {
+            return (
+              <NavLink key={i} to={e.path} className="hidden lg:inline">
+                {e.title}
+              </NavLink>
+            );
+          })}
           <AiOutlineMenu
+            className="lg:hidden"
             onClick={() => {
               setOpenMenu(true);
             }}

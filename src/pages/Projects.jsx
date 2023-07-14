@@ -1,3 +1,5 @@
+import Footer from "../components/Footer";
+
 const dataProject = [
   {
     id: 1,
@@ -45,24 +47,29 @@ const dataProject = [
 export default function Projects() {
   return (
     <>
-      <div id="Projecs" className="p-3 flex flex-col gap-4">
-        <h3>My projects</h3>
-        {dataProject.map((project) => (
-          <>
-            <div key={project.id} className="w-full m-1 gap-8 flex flex-col ">
-              <h5 className="">{project.name}</h5>
-              <img
-                src={project.img}
-                alt={project.name}
-                className="w-3/4 h-full mx-auto"
-              />
-              <div>
-                <p className="text-[12px]">{project.dectiption}</p>
+      <div>
+        <div id="Projecs" className="p-6 flex flex-col gap-4">
+          <h3>My projects</h3>
+          {dataProject.map((project) => (
+            <>
+              <div key={project.id} className="w-full m-1 gap-8 flex flex-col ">
+                <h5 className="sm:text-lg ">{project.name}</h5>
+                <img
+                  src={project.img}
+                  alt={project.name}
+                  className="w-3/4 h-full mx-auto"
+                />
+                <div>
+                  <p className="text-[12px] sm:text-sm md:text-base">
+                    {project.dectiption}
+                  </p>
+                </div>
+                <div className="h-[2px] bg-slate-300"></div>
               </div>
-              <div className="h-[2px] bg-slate-300"></div>
-            </div>
-          </>
-        ))}
+            </>
+          ))}
+        </div>
+        <Footer />
       </div>
     </>
   );

@@ -9,7 +9,7 @@ export default function App() {
       {/* <div className="container mx-auto"> */}
       <Outlet />
       {/* </div> */}
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }
