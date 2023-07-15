@@ -7,7 +7,7 @@ const dataProject = [
     img: "/ali-syariah.c.png",
     link: "https://github.com/hanafiahlubis/penjualan-Al-quran-hadits/",
     dectiption:
-      "Penjualan Al-Quran dan hadis adalah proyek yang bertujuan untuk menyebarkan ilmu dan ajaran Islam kepada masyarakat luas.",
+      "The sale of Al-Quran and Hadith is a project that aims to spread Islamic knowledge and teachings to the wider community.",
   },
   {
     id: 2,
@@ -15,9 +15,9 @@ const dataProject = [
     img: "/Hanafi`A.png",
     link: "https://github.com/hanafiahlubis/quiz-quran",
     dectiption: `
-    Al-Qur'an adalah kitab suci umat Islam yang berisi petunjuk dan pedoman hidup bagi umat manusia. Al-Qur'an terdiri dari 114 surat yang dibagi menjadi 30 juz. Setiap surat terdiri dari ayat-ayat yang berisi berbagai macam topik, seperti kisah, hukum, dan perintah Allah.
-    Proyek Al-Qur'an ini bertujuan untuk membantu umat Islam untuk mempelajari Al-Qur'an dengan lebih mudah dan menyenangkan. Proyek ini akan berisi berbagai macam fitur, seperti: Teks Al-Qur'an, Kuis Al-Qur'an ,Fitur untuk membuat soal kuis Al-Qur'an.
-    Proyek Al-Qur'an ini diharapkan dapat menjadi sumber belajar yang bermanfaat bagi umat Islam di seluruh dunia.`,
+    Al-Qur'an is the holy book of Muslims which contains instructions and guidelines for life for mankind. Al-Qur'an consists of 114 chapters which are divided into 30 chapters. Each sura consists of verses covering various topics, such as stories, laws, and commands of Allah.
+    This Al-Qur'an project aims to help Muslims to learn the Qur'an more easily and pleasantly. This project will contain various features, such as: Al-Qur'an Text, Al-Qur'an Quiz, Features for making Al-Qur'an quiz questions.
+    It is hoped that this Al-Qur'an project will become a useful learning resource for Muslims around the world.`,
   },
   {
     id: 3,
@@ -25,20 +25,20 @@ const dataProject = [
     img: "/an-nafi.png",
     link: "https://github.com/hanafiahlubis/an-nafi",
     dectiption: `
-    Proyek ini menampilkan jadwal sholat, ayat-ayat Al-Quran, dan doa-doa. Proyek ini bertujuan untuk membantu umat Islam untuk beribadah dengan lebih baik. Proyek ini juga bertujuan untuk meningkatkan pemahaman umat Islam tentang Islam.
+    This project displays prayer times, verses of the Al-Quran, and prayers. This project aims to help Muslims to pray better. This project also aims to increase the understanding of Muslims about Islam.
     
-    Proyek ini akan menampilkan jadwal sholat untuk berbagai kota di dunia. Proyek ini juga akan menampilkan ayat-ayat Al-Quran dan doa-doa dalam berbagai bahasa. Proyek ini akan mudah digunakan dan dapat diakses oleh siapa saja.
-    
-    Proyek ini akan bermanfaat bagi umat Islam yang ingin beribadah dengan lebih baik. Proyek ini juga akan bermanfaat bagi umat Islam yang ingin meningkatkan pemahaman mereka tentang Islam.`,
+    This project will display prayer times for different cities of the world. The project will also feature verses from the Al-Quran and prayers in different languages. This project will be easy to use and accessible to anyone.
+   
+    This project will benefit Muslims who wish to worship better. This project will also benefit Muslims who want to increase their understanding of Islam.`,
   },
   {
     id: 4,
     name: "Al-Likah",
     img: "/al-likah.png",
     link: "https://github.com/hanafiahlubis/toko-baju",
-    dectiption: `Toko Al-likah adalah  
-    Menawarkan berbagai macam baju dengan kualitas yang baik dan harga yang terjangkau.
-    Memiliki layanan WebSite yang baik dan Mantap.`,
+    dectiption: `Al-likah shop is
+    Offers a wide range of clothes with good quality and affordable prices.
+    Have a good and steady WebSite service.`,
   },
   {
     id: 5,
@@ -46,17 +46,17 @@ const dataProject = [
     img: "/what-al.png",
     link: "https://github.com/hanafiahlubis/whats-al",
     dectiption:
-      "Proyek media sosial yang berisi mengirim pesan dan memposting cerita akan menjadi cara yang bagus untuk terhubung dengan teman dan keluarga. Pengguna dapat mengirim pesan satu sama lain, memposting cerita, dan berbagi foto dan video. Proyek ini juga dapat digunakan untuk mempromosikan bisnis atau organisasi.",
+      "Social media projects that involve sending messages and posting stories would be a great way to connect with friends and family. Users can message each other, post stories, and share photos and videos. This project can also be used to promote a business or organization.",
   },
   {
     id: 6,
     name: "Jadwal-CPU",
     img: "/bac-end.avif",
     link: "https://github.com/hanafiahlubis/BackEnd-jadwal-CPU",
-    dectiption: `Jadwal CPU adalah algoritma yang menentukan urutan proses yang akan dijalankan pada CPU. Algoritma ini penting karena memastikan bahwa proses-proses berjalan secara adil dan efisien.First-come, first-served (FCFS)Algoritma ini sederhana dan mudah diimplementasikan, tetapi tidak selalu efisien.
-      Shortest job first (SJF) Algoritma ini lebih efisien daripada FCFS, tetapi lebih kompleks dan lebih sulit diimplementasikan. 
-      Priority scheduling Algoritma ini memungkinkan proses diberi prioritas yang berbeda, dan proses dengan prioritas tertinggi akan dijalankan terlebih dahulu.
-      Round robin Algoritma ini membagi waktu CPU menjadi slot-slot waktu yang sama, dan setiap proses diberi giliran untuk menggunakan CPU selama satu slot waktu.`,
+    dectiption: `The CPU schedule is an algorithm that determines the order in which processes will run on the CPU. This algorithm is important because it ensures that processes run fairly and efficiently. First-come, first-served (FCFS) This algorithm is simple and easy to implement, but not always efficient.
+    Shortest job first (SJF) This algorithm is more efficient than FCFS, but more complex and more difficult to implement.
+    Priority scheduling This algorithm allows processes to be given different priorities, and the process with the highest priority will be executed first.
+    Round robin This algorithm divides CPU time into equal time slots, and each process is given a turn to use the CPU during one time slot.`,
   },
 ];
 export default function Projects() {
