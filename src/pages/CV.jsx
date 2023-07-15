@@ -54,7 +54,7 @@ export default function CV() {
       <div className="p-6 pt-10 flex flex-col gap-8">
         <div className="flex flex-col gap-4">
           <h2 className="border-b-2">{cv[0].judul}</h2>
-          <p className="text-[12px] text-justify w-[64%] bg-slate-600 text-white m-auto rounded-2xl p-4">
+          <p className="text-[12px] text-justify w-[64%] bg-slate-600 text-white m-auto rounded-2xl p-4 sm:text-sm indent-4">
             {cv[0].profile}
           </p>
         </div>
@@ -76,14 +76,14 @@ export default function CV() {
         </div>
         <div className="flex flex-col gap-4">
           <h2>Skills</h2>
-          <ul className="flex flex-wrap min-w-[94%] gap-2 list-disc">
+          <ul className="flex flex-wrap min-w-[94%] gap-2 list-disc justify-center">
             {cv[2].skills.map((skill, i) => {
               return (
                 <li
-                  className="bg-slate-600 text-white p-2 rounded-lg w-1/5 text-center"
+                  className="bg-slate-600 text-white p-2 rounded-lg w-[32%] text-center sm:w-1/5"
                   key={i}
                 >
-                  {skill}{" "}
+                  {skill}
                 </li>
               );
             })}
@@ -101,8 +101,8 @@ export default function CV() {
                   className="bg-slate-600 w-64 p-2 flex rounded-lg flex-col justify-evenly items-center text-white"
                   key={i}
                 >
-                  <h3>{t.name}</h3>
-                  <p>{t.date}</p>
+                  <h3 className="text-center">{t.name}</h3>
+                  <p className="text-center">{t.date}</p>
                 </li>
               );
             })}
