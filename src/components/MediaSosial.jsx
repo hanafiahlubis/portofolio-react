@@ -9,13 +9,13 @@ export default function MediaSosial() {
       <NavLink to="https://github.com/hanafiahlubis" className="text-black">
         <BsGithub className="text-2xl " />
       </NavLink>
-      <NavLink to="" className="text-black">
-        <BiLogoLinkedinSquare className="text-2xl " />
-      </NavLink>
       <NavLink
-        to="https://astrofy-template.netlify.app/cv/"
+        to="https://www.linkedin.com/in/ali-hanafiah-7067a8263/"
         className="text-black"
       >
+        <BiLogoLinkedinSquare className="text-2xl " />
+      </NavLink>
+      <NavLink to="https://twitter.com/Ali_Hanafiah1" className="text-black">
         <FaTwitter className="text-2xl " />
       </NavLink>
     </>
