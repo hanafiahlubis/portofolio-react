@@ -14,7 +14,7 @@ const cv = [
       },
       {
         name: "SMAS MUHAMMADIYAH 11 PadangSidimpuan",
-        title: "SEPTEMBER 2021 - SEKARANG",
+        title: "SEPTEMBER/2019 - AGUSTUS/2021",
       },
     ],
   },
@@ -36,34 +36,73 @@ const cv = [
       "GitHub",
     ],
   },
+  {
+    training: [
+      { name: "Logika Algoritma", date: "September/2021 - Januari/2022" },
+      { name: "Basis Data dan Strultur Data", date: "Januari/2022 - Mei/2022" },
+      { name: "Fundamental Web", date: "Mei/2022 - Juli/2022" },
+      { name: "Fundamental Node.js", date: "Agustus/2022 - Desember/2022" },
+      { name: "Node.js Lanjutan", date: "Desember/2022 - April/2023" },
+      { name: "Git dan GitHub", date: "Mei/2023" },
+    ],
+  },
 ];
 
 export default function CV() {
   return (
-    <>
+    <div className="w-full">
       <div className="p-6 pt-10 flex flex-col gap-8">
         <div className="flex flex-col gap-4">
           <h2 className="border-b-2">{cv[0].judul}</h2>
-          <p className="text-[12px] text-justify">{cv[0].profile}</p>
+          <p className="text-[12px] text-justify w-[64%] bg-slate-600 text-white m-auto rounded-2xl p-4">
+            {cv[0].profile}
+          </p>
         </div>
         <div className="flex flex-col gap-4">
           <h2 className="border-b-red-200">Education</h2>
-          {cv[1].educations.map((education, i) => {
-            return (
-              <div key={i} className="flex flex-col gap-2">
-                <h5>{education.name}</h5>
-                <p className="text-[12px] text-justify">{education.title}</p>
-              </div>
-            );
-          })}
+          <div className="flex gap-2 flex-wrap justify-center">
+            {cv[1].educations.map((education, i) => {
+              return (
+                <div
+                  key={i}
+                  className="flex flex-col gap-2 w-72 bg-slate-600 rounded-2xl text-white p-4"
+                >
+                  <h4 className="text-center">{education.name}</h4>
+                  <p className="  text-center">{education.title}</p>
+                </div>
+              );
+            })}
+          </div>
         </div>
         <div className="flex flex-col gap-4">
           <h2>Skills</h2>
-          <ul type="square" className="flex flex-wrap min-w-[94%] gap-2">
+          <ul className="flex flex-wrap min-w-[94%] gap-2 list-disc">
             {cv[2].skills.map((skill, i) => {
               return (
-                <li className="text-xs" key={i}>
+                <li
+                  className="bg-slate-600 text-white p-2 rounded-lg w-1/5 text-center"
+                  key={i}
+                >
                   {skill}{" "}
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+        <div className="flex flex-col gap-4">
+          <h2>Training</h2>
+          <ul
+            type="square"
+            className="flex flex-wrap w-full gap-2 justify-center"
+          >
+            {cv[3].training.map((t, i) => {
+              return (
+                <li
+                  className="bg-slate-600 w-64 p-2 flex rounded-lg flex-col justify-evenly items-center text-white"
+                  key={i}
+                >
+                  <h3>{t.name}</h3>
+                  <p>{t.date}</p>
                 </li>
               );
             })}
@@ -71,6 +110,6 @@ export default function CV() {
         </div>
       </div>
       <Footer />
-    </>
+    </div>
   );
 }
