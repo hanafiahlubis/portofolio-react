@@ -59,7 +59,7 @@ export default function Header() {
         onClick={() => setOpenMenu(false)}
         className={`${
           openMenu ? "block" : "hidden"
-        } w-screen sm:w-full h-full absolute left-0 top-0 z-50 warna`}
+        } w-screen sm:w-full h-full absolute left-0 top-0 z-50 warna overflow-y-hidden`}
       >
         <div
           className={`${
