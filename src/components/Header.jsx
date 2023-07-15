@@ -55,7 +55,7 @@ export default function Header() {
           <MediaSosial />
         </div>
       </header>
-      <button
+      <div
         onClick={() => setOpenMenu(false)}
         className={`${
           openMenu ? "block" : "hidden"
@@ -103,7 +103,7 @@ export default function Header() {
             <MediaSosial />
           </div>
         </div>
-      </button>
+      </div>
     </>
   );
 }
