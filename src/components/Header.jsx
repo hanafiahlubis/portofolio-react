@@ -65,7 +65,7 @@ export default function Header() {
               theme === "dark"
                 ? "bg-slate-500 text-white "
                 : "bg-white lg:bg-black lg:text-white text-black"
-            } py-1 px-2 rounded-2xl font-bold border-none lg:absolute lg:right-0`}
+            } py-1 px-2 rounded-2xl font-bold border-none lg:absolute lg:right-0 cursor-pointer`}
             onClick={() => setShowThema(!showThema)}
           >
             Theme
