@@ -80,7 +80,10 @@ export default function Header() {
           className={`${
             theme === "dark" ? "bg-slate-600 text-white " : "bg-slate-200"
           } hover:cursor-pointer absolute  right-7 rounded-lg top-24 p-2 lg:top-11`}
-          onClick={(e) => setTheme(e.target.value)}
+          onClick={(e) => {
+            setTheme(e.target.value);
+            showThema(false);
+          }}
         >
           <option
             value="light"
