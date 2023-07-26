@@ -82,7 +82,7 @@ export default function Header() {
           } hover:cursor-pointer absolute  right-7 rounded-lg top-24 p-2 lg:top-11`}
           onClick={(e) => {
             setTheme(e.target.value);
-            showThema(false);
+            setShowThema(false);
           }}
         >
           <option
