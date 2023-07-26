@@ -68,7 +68,7 @@ export default function Header() {
             } py-1 px-2 rounded-2xl font-bold border-none lg:absolute lg:right-0`}
             onClick={() => setShowThema(!showThema)}
           >
-            Thema
+            Theme
           </button>
         </div>
         <div className="hidden lg:flex justify-evenly absolute bottom-0 w-full pb-8 ">
