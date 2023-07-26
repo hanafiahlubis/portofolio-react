@@ -1,4 +1,6 @@
+import { useContext } from "react";
 import Footer from "../components/Footer";
+import { ThemeContext } from "../App";
 
 const dataProject = [
   {
@@ -60,9 +62,15 @@ const dataProject = [
   },
 ];
 export default function Projects() {
+  const { theme } = useContext(ThemeContext);
   return (
     <div className="w-full">
-      <div id="Projecs" className="p-6 flex flex-col gap-4">
+      <div
+        id="Projecs"
+        className={`${
+          theme === "dark" ? "bg-slate-900 text-white" : "text-black"
+        } p-6 flex flex-col gap-4`}
+      >
         <h3>My projects</h3>
         {dataProject.map((project) => (
           <>
@@ -90,8 +98,8 @@ export default function Projects() {
             </div>
           </>
         ))}
+        <Footer />
       </div>
-      <Footer />
     </div>
   );
 }

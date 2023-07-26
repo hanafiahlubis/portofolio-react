@@ -10,7 +10,7 @@ export const pages = [
   {
     path: "/",
     element: <Home />,
-    title: "Beranda",
+    title: "Home",
   },
   {
     path: "/Projects",

@@ -1,4 +1,6 @@
+import { useContext } from "react";
 import Footer from "../components/Footer";
+import { ThemeContext } from "../App";
 
 const cv = [
   {
@@ -49,12 +51,17 @@ const cv = [
 ];
 
 export default function CV() {
+  const { theme } = useContext(ThemeContext);
   return (
-    <div className="w-full">
+    <div className={`${theme === "dark" && "bg-slate-900 text-white"}  w-full`}>
       <div className="p-6 pt-10 flex flex-col gap-8">
         <div className="flex flex-col gap-4">
           <h2 className="border-b-2">{cv[0].judul}</h2>
-          <p className="text-[12px] text-justify w-[64%] bg-slate-600 text-white m-auto rounded-2xl p-4 sm:text-sm indent-4">
+          <p
+            className={`${
+              theme === "dark" ? "bg-slate-600" : "bg-black"
+            } text-whit text-[12px] text-justify text-white w-[64%] m-auto  rounded-2xl p-4 sm:text-sm indent-4`}
+          >
             {cv[0].profile}
           </p>
         </div>
@@ -65,7 +72,9 @@ export default function CV() {
               return (
                 <div
                   key={i}
-                  className="flex flex-col gap-2 w-72 bg-slate-600 rounded-2xl text-white p-4"
+                  className={`${
+                    theme === "dark" ? "bg-slate-600" : "bg-black"
+                  } flex flex-col gap-2 w-72 rounded-2xl text-white p-4`}
                 >
                   <h4 className="text-center">{education.name}</h4>
                   <p className="  text-center">{education.title}</p>
@@ -80,7 +89,9 @@ export default function CV() {
             {cv[2].skills.map((skill, i) => {
               return (
                 <li
-                  className="bg-slate-600 text-white p-2 rounded-lg w-[32%] text-center sm:w-1/5"
+                  className={`${
+                    theme === "dark" ? "bg-slate-600" : "bg-black"
+                  } text-white p-2 rounded-lg w-[32%] text-center sm:w-1/5`}
                   key={i}
                 >
                   {skill}
@@ -98,7 +109,9 @@ export default function CV() {
             {cv[3].training.map((t, i) => {
               return (
                 <li
-                  className="bg-slate-600 w-64 p-2 flex rounded-lg flex-col justify-evenly items-center text-white"
+                  className={`${
+                    theme === "dark" ? "bg-slate-600" : "bg-black"
+                  }  w-64 p-2 flex rounded-lg flex-col justify-evenly items-center text-white`}
                   key={i}
                 >
                   <h3 className="text-center">{t.name}</h3>

@@ -1,16 +1,22 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { Link, NavLink } from "react-router-dom";
 import { pages } from "../main";
 import MediaSosial from "./MediaSosial";
+import { ThemeContext } from "../App";
 
 export default function Header() {
+  const [showThema, setShowThema] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
-
+  const { theme, setTheme } = useContext(ThemeContext);
   return (
     <>
-      <header className="flex justify-between items-center w-full sticky z-30 top-0 py-4   bg-slate-700  shadow-sm shadow-black lg:flex-col lg:justify-start lg:w-[25%]">
-        <div className="hidden w-full  h-[39%] items-center lg:flex bg-none">
+      <header
+        className={`${
+          theme === "dark" ? "bg-slate-700" : "bg-black"
+        } flex justify-between items-center w-full sticky z-30 top-0 py-4 shadow-sm shadow-black lg:flex-col lg:justify-start lg:w-[25%]`}
+      >
+        <div className="hidden w-full  h-[39%] items-center lg:flex bg-none lg:h-auto">
           <img
             src="/Ali Hanafiah.jpeg"
             alt="sasasa"
@@ -18,9 +24,6 @@ export default function Header() {
           />
         </div>
 
-        <Link to="/" className="logo p-2 lg:hidden ">
-          <h1 className="text-white underline">Ali Hanafiah </h1>
-        </Link>
         <nav
           className={`${
             openMenu === true ? "hidden" : "flex"
@@ -51,10 +54,46 @@ export default function Header() {
             }}
           />
         </nav>
+
+        <Link to="/" className="logo p-2 lg:hidden ">
+          <h1 className="text-white underline text-xl ">Ali Hanafiah </h1>
+        </Link>
+
+        <div className="flex items-center w-max p-2  lg:w-12 lg:h-[10px] lg:fixed lg:right-6">
+          <button
+            className={`${
+              theme === "dark"
+                ? "bg-slate-500 text-white "
+                : "bg-white lg:bg-black lg:text-white text-black"
+            } py-1 px-2 rounded-2xl font-bold border-none lg:absolute lg:right-0`}
+            onClick={() => setShowThema(!showThema)}
+          >
+            Thema
+          </button>
+        </div>
         <div className="hidden lg:flex justify-evenly absolute bottom-0 w-full pb-8 ">
           <MediaSosial />
         </div>
       </header>
+      {showThema && (
+        <section
+          className={`${
+            theme === "dark" ? "bg-slate-600 text-white " : "bg-slate-200"
+          } hover:cursor-pointer absolute  right-7 rounded-lg top-24 p-2 lg:top-11`}
+          onClick={(e) => setTheme(e.target.value)}
+        >
+          <option
+            value="light"
+            className=" hover:bg-slate-900 hover:text-white"
+          >
+            light
+          </option>
+          <option value="dark" className=" hover:bg-slate-900 hover:text-white">
+            Dark
+          </option>
+        </section>
+      )}
+
       <div
         onClick={() => setOpenMenu(false)}
         className={`${
