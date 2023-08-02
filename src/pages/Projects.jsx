@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import Footer from "../components/Footer";
 import { ThemeContext } from "../App";
+import BackToTopButton from "../components/BackToTopButton";
+import { useRef } from "react";
 
 const dataProject = [
   {
@@ -63,9 +65,11 @@ const dataProject = [
 ];
 export default function Projects() {
   const { theme } = useContext(ThemeContext);
+  const backToTopRef = useRef(null);
   return (
     <div className="w-full">
       <div
+        ref={backToTopRef}
         id="Projecs"
         className={`${
           theme === "dark" ? "bg-slate-900 text-white" : "text-black"
@@ -73,31 +77,30 @@ export default function Projects() {
       >
         <h3>My projects</h3>
         {dataProject.map((project) => (
-          <>
-            <div key={project.id} className="w-full m-1 gap-8 flex flex-col ">
-              <h3 className="sm:text-lg ">{project.name}</h3>
-              <img
-                src={project.img}
-                alt={project.name}
-                className="w-3/4 h-full mx-auto"
-              />
-              <div>
-                <p className="text-[12px] sm:text-sm md:text-base text-justify indent-4">
-                  {project.dectiption}
-                </p>
-              </div>
-              <div className="flex justify-center">
-                <a
-                  href={project.link}
-                  className="no-underline  p-2 text-sm  bg-slate-600 text-white rounded-lg hover:bg-slate-300 hover:text-slate-600"
-                >
-                  Open Link
-                </a>
-              </div>
-              <div className="h-[2px] bg-slate-300"></div>
+          <div key={project.id} className="w-full m-1 gap-8 flex flex-col ">
+            <h3 className="sm:text-lg ">{project.name}</h3>
+            <img
+              src={project.img}
+              alt={project.name}
+              className="w-3/4 h-full mx-auto"
+            />
+            <div>
+              <p className="text-[12px] sm:text-sm md:text-base text-justify indent-4">
+                {project.dectiption}
+              </p>
             </div>
-          </>
+            <div className="flex justify-center">
+              <a
+                href={project.link}
+                className="no-underline  p-2 text-sm  bg-slate-600 text-white rounded-lg hover:bg-slate-300 hover:text-slate-600"
+              >
+                Open Link
+              </a>
+            </div>
+            <div className="h-[2px] bg-slate-300"></div>
+          </div>
         ))}
+        <BackToTopButton backToTopRef={backToTopRef} />
         <Footer />
       </div>
     </div>

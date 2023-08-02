@@ -1,6 +1,9 @@
+/* eslint-disable react/jsx-no-comment-textnodes */
 import { useContext } from "react";
 import Footer from "../components/Footer";
 import { ThemeContext } from "../App";
+import { useRef } from "react";
+import BackToTopButton from "../components/BackToTopButton";
 
 const cv = [
   {
@@ -52,9 +55,10 @@ const cv = [
 
 export default function CV() {
   const { theme } = useContext(ThemeContext);
+  const backToTopRef = useRef(null);
   return (
     <div className={`${theme === "dark" && "bg-slate-900 text-white"}  w-full`}>
-      <div className="p-6 pt-10 flex flex-col gap-8">
+      <div ref={backToTopRef} className="p-6 pt-10 flex flex-col gap-8">
         <div className="flex flex-col gap-4">
           <h2 className="border-b-2">{cv[0].judul}</h2>
           <p
@@ -122,6 +126,7 @@ export default function CV() {
           </ul>
         </div>
       </div>
+      <BackToTopButton backToTopRef={backToTopRef} />
       <Footer />
     </div>
   );

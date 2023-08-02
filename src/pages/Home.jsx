@@ -1,30 +1,19 @@
 import { useContext } from "react";
 import { ThemeContext } from "../App";
 import Projects from "./Projects";
+// import BackToTopButton from "../components/BackToTopButton";
+import { useRef } from "react";
+import BackToTopButton from "../components/BackToTopButton";
 
 export default function Home() {
   const { theme } = useContext(ThemeContext);
+  const backToTopRef = useRef(null);
   return (
     <div
       className={`${theme === "dark" ? "bg-slate-900" : "bg-white"}   w-full`}
     >
-      {/* <div className="absolute right-0">
-        <button onClick={() => setShowThema(!showThema)}>Thema</button>
-        {showThema && (
-          <section
-            className="hover:cursor-pointer"
-            onClick={(e) => setTheme(e.target.value)}
-          >
-            <option value="light" className=" hover:bg-slate-900">
-              light
-            </option>
-            <option value="dark" className=" hover:bg-slate-900">
-              Drak
-            </option>
-          </section>
-        )}
-      </div> */}
       <div
+        ref={backToTopRef}
         id="Home"
         className={`${
           theme === "dark" ? "text-white" : ""
@@ -40,6 +29,7 @@ export default function Home() {
         </p>
       </div>
       <Projects />
+      <BackToTopButton backToTopRef={backToTopRef} />
     </div>
   );
 }

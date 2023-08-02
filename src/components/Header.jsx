@@ -14,7 +14,7 @@ export default function Header() {
       <header
         className={`${
           theme === "dark" ? "bg-slate-700" : "bg-black"
-        } flex justify-between items-center w-full sticky z-30 top-0 py-4 shadow-sm shadow-black lg:flex-col lg:justify-start lg:w-[25%]`}
+        } flex justify-between items-center w-full  lg:sticky static z-30 top-0 py-4 shadow-sm shadow-black lg:flex-col lg:justify-start lg:w-[25%]`}
       >
         <div className="hidden w-full  h-[39%] items-center lg:flex bg-none lg:h-auto">
           <img
@@ -103,7 +103,6 @@ export default function Header() {
           openMenu ? "block" : "hidden"
         } w-screen sm:w-full  fixed h-screen left-0 top-0 z-50 warna overflow-y-hidden`}
       >
-        {/* sasaa */}
         <div
           className={`${
             openMenu ? "slide-in" : "slide-out"
@@ -119,18 +118,15 @@ export default function Header() {
             </div>
           </div>
           <ul>
-            {/* <li className="flex px-4 py-5"><a href="#Home">Home</a></li> */}
             {pages.map((page, i) => (
-              <>
-                <li key={i} className="flex ml-[10%] mt-[10%]">
-                  <NavLink
-                    to={page.path}
-                    className="no-underline text-white text-base"
-                  >
-                    {page.title}
-                  </NavLink>
-                </li>
-              </>
+              <li key={i} className="flex ml-[10%] mt-[10%]">
+                <NavLink
+                  to={page.path}
+                  className="no-underline text-white text-base"
+                >
+                  {page.title}
+                </NavLink>
+              </li>
             ))}
             <li className="flex ml-[10%] mt-[10%]">
               <a
