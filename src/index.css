@@ -9,6 +9,10 @@
   overflow-x: hidden;
 }
 
+.box-shodow {
+  box-shadow: 0 0 8px black;
+}
+
 .slide-in {
   animation: slidein 0.5s;
   left: 0px;

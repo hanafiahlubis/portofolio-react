@@ -67,7 +67,7 @@ export default function Header() {
                 ? "bg-slate-900 text-white lg:bg-white lg:text-slate-900"
                 : "bg-white lg:bg-black lg:text-white text-black"
             } py-1 px-2 font-bold border-none lg:absolute lg:right-0 cursor-pointer w-9 h-full flex items-center justify-center rounded-[50%] `}
-            onClick={() => setTheme(theme !== "dark" ? "dark" : "ligth")}
+            onClick={() => setTheme(theme !== "dark" ? "dark" : "light")}
           >
             {theme === "dark" ? (
               <BsSun size={18} />
