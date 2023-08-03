@@ -1,12 +1,13 @@
 import { useState, useContext } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
+import { BsFillMoonStarsFill } from "react-icons/bs";
+import { BsSun } from "react-icons/bs";
 import { Link, NavLink } from "react-router-dom";
 import { pages } from "../main";
 import MediaSosial from "./MediaSosial";
 import { ThemeContext } from "../App";
 
 export default function Header() {
-  const [showThema, setShowThema] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
   const { theme, setTheme } = useContext(ThemeContext);
   return (
@@ -63,39 +64,22 @@ export default function Header() {
           <button
             className={`${
               theme === "dark"
-                ? "bg-slate-500 text-white "
+                ? "bg-slate-900 text-white lg:bg-white lg:text-slate-900"
                 : "bg-white lg:bg-black lg:text-white text-black"
-            } py-1 px-2 rounded-2xl font-bold border-none lg:absolute lg:right-0 cursor-pointer`}
-            onClick={() => setShowThema(!showThema)}
+            } py-1 px-2 font-bold border-none lg:absolute lg:right-0 cursor-pointer w-9 h-full flex items-center justify-center rounded-[50%] `}
+            onClick={() => setTheme(theme !== "dark" ? "dark" : "ligth")}
           >
-            Theme
+            {theme === "dark" ? (
+              <BsSun size={18} />
+            ) : (
+              <BsFillMoonStarsFill size={18} />
+            )}
           </button>
         </div>
         <div className="hidden lg:flex justify-evenly absolute bottom-0 w-full pb-8 ">
           <MediaSosial />
         </div>
       </header>
-      {showThema && (
-        <section
-          className={`${
-            theme === "dark" ? "bg-slate-600 text-white " : "bg-slate-200"
-          } hover:cursor-pointer absolute  right-4  lg:right-7 rounded-lg top-23 p-2 lg:top-11`}
-          onClick={(e) => {
-            setTheme(e.target.value);
-            setShowThema(false);
-          }}
-        >
-          <option
-            value="light"
-            className=" hover:bg-slate-900 hover:text-white"
-          >
-            light
-          </option>
-          <option value="dark" className=" hover:bg-slate-900 hover:text-white">
-            Dark
-          </option>
-        </section>
-      )}
 
       <div
         onClick={() => setOpenMenu(false)}
