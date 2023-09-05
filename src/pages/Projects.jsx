@@ -62,6 +62,13 @@ const dataProject = [
     Priority scheduling This algorithm allows processes to be given different priorities, and the process with the highest priority will be executed first.
     Round robin This algorithm divides CPU time into equal time slots, and each process is given a turn to use the CPU during one time slot.`,
   },
+  {
+    id: 7,
+    name: "Al-TWIT",
+    img: "/Al-Twit.png",
+    link: "https://github.com/hanafiahlubis/al-twit2",
+    dectiption: `Al-Twit is a Social Media Application created as a Full Stack Development Project with a tech stack namely Express-PosgreSQL-ReactJS`,
+  },
 ];
 export default function Projects() {
   const { theme } = useContext(ThemeContext);
