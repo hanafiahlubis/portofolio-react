@@ -11,19 +11,19 @@ export default function MediaSosial() {
     <>
       <NavLink
         to="https://github.com/hanafiahlubis"
-        className={`${theme === "dark" ? "text-black" : "text-white"}`}
+        className={`${theme === "dark" ? "text-white" : "text-white"}`}
       >
         <BsGithub className="text-2xl " />
       </NavLink>
       <NavLink
         to="https://www.linkedin.com/in/ali-hanafiah-7067a8263/"
-        className={`${theme === "dark" ? "text-black" : "text-white"}`}
+        className={`${theme === "dark" ? "text-white" : "text-white"}`}
       >
         <BiLogoLinkedinSquare className="text-2xl " />
       </NavLink>
       <NavLink
         to="https://twitter.com/Ali_Hanafiah1"
-        className={`${theme === "dark" ? "text-black" : "text-white"}`}
+        className={`${theme === "dark" ? "text-white" : "text-white"}`}
       >
         <FaTwitter className="text-2xl " />
       </NavLink>

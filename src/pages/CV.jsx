@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import { ThemeContext } from "../App";
 import { useRef } from "react";
 import BackToTopButton from "../components/BackToTopButton";
+import SentimentSatisfiedAltIcon from '@mui/icons-material/SentimentSatisfiedAlt';
 
 const cv = [
   {
@@ -51,6 +52,37 @@ const cv = [
       { name: "Git dan GitHub", date: "Mei/2023" },
     ],
   },
+  {
+    workExperiences: [
+      {
+        name: "PT.Ifabula Digital Kreasi",
+        deskriptions: [
+          {
+            name: "Backend Developer",
+            detail: [
+              {
+                projects: "OneSmile",
+                titles: ["Project  OneSmile ini saya mengembangkan aplikasi mobile dengan fokus pada kinerja optimal, berkekeloborasi dengan Tim FE, dan memimpin proses debugging dan pengujian applikasi mobile untuk memastikan pengalaman pengguna yang lancar dan bebas dari bug."]
+              }]
+          },
+          {
+            name: "Full Stack Developer",
+            detail: [
+              {
+                projects: "Gefami HR",
+                titles: [" mengembangkan WebSite dengan fokus pada kinerja optimal dan pengalaman pengguna yang lancar dan bebas dari bug."]
+              },
+              {
+                projects: "Assyst",
+                titles: ["mengembangkan WebSite dengan fokus pada kinerja optimal dan pengalaman."]
+            
+              }
+            ]
+          },
+        ]
+      }
+    ]
+  }
 ];
 
 export default function CV() {
@@ -62,9 +94,8 @@ export default function CV() {
         <div className="flex flex-col gap-4">
           <h2 className="border-b-2">{cv[0].judul}</h2>
           <p
-            className={`${
-              theme === "dark" ? "bg-slate-600" : "bg-black"
-            } text-whit text-[12px] text-justify text-white w-[64%] m-auto  rounded-2xl p-4 sm:text-sm indent-4`}
+            className={`${theme === "dark" ? "bg-slate-600" : "bg-black"
+              } text-whit text-[12px] text-justify text-white w-[64%] m-auto  rounded-2xl p-4 sm:text-sm indent-4`}
           >
             {cv[0].profile}
           </p>
@@ -76,9 +107,8 @@ export default function CV() {
               return (
                 <div
                   key={i}
-                  className={`${
-                    theme === "dark" ? "bg-slate-600" : "bg-black"
-                  } flex flex-col gap-2 w-72 rounded-2xl text-white p-4`}
+                  className={`${theme === "dark" ? "bg-slate-600" : "bg-black"
+                    } flex flex-col gap-2 w-72 rounded-2xl text-white p-4`}
                 >
                   <h4 className="text-center">{education.name}</h4>
                   <p className="  text-center">{education.title}</p>
@@ -88,14 +118,60 @@ export default function CV() {
           </div>
         </div>
         <div className="flex flex-col gap-4">
+          <h2>Work Experience</h2>
+          <ul className="flex flex-wrap min-w-[94%] gap-2 list-disc justify-center">
+            {cv[4].workExperiences.map((work, i) => {
+              // console.log(work);
+
+              return (
+                <li
+                  className={`${theme === "dark" ? "bg-slate-600" : "bg-black"
+                    } text-white p-2 rounded-lg   w-[95%]  md:w-[80%]    h-["18rem"] overflow-y-auto `}
+                  key={i}
+                >
+                  <p className="text-center">{work?.name || ""}</p>
+                  ★ Projects
+                  <ul>
+                    {work?.deskriptions?.map(deskription => (
+                      <>
+                        <li className="ml-4"> # {deskription.name}
+
+                          <ul>
+
+                            {deskription?.detail.map(title => (
+                              <>
+                                <li className="before:content-['-'] ml-4 gap-4"> {title?.projects} </li>
+
+                                <ul>
+                                  {title?.titles.map(e => (
+                                    <li className="flex  ml-6 gap-2 ">
+                                      {/* <SentimentSatisfiedAltIcon /> */}
+                                      <p className="text-justify p-0 pr-2 pb-2 pl-2"> * <span>{e}</span></p>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </>
+                            ))}
+                          </ul>
+                        </li>
+                      </>
+                    )
+                    )}
+
+                  </ul>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+        <div className="flex flex-col gap-4">
           <h2>Skills</h2>
           <ul className="flex flex-wrap min-w-[94%] gap-2 list-disc justify-center">
             {cv[2].skills.map((skill, i) => {
               return (
                 <li
-                  className={`${
-                    theme === "dark" ? "bg-slate-600" : "bg-black"
-                  } text-white p-2 rounded-lg w-[32%] text-center sm:w-1/5`}
+                  className={`${theme === "dark" ? "bg-slate-600" : "bg-black"
+                    } text-white p-2 rounded-lg w-[32%] text-center sm:w-1/5`}
                   key={i}
                 >
                   {skill}
@@ -113,9 +189,8 @@ export default function CV() {
             {cv[3].training.map((t, i) => {
               return (
                 <li
-                  className={`${
-                    theme === "dark" ? "bg-slate-600" : "bg-black"
-                  }  w-64 p-2 flex rounded-lg flex-col justify-evenly items-center text-white`}
+                  className={`${theme === "dark" ? "bg-slate-600" : "bg-black"
+                    }  w-64 p-2 flex rounded-lg flex-col justify-evenly items-center text-white`}
                   key={i}
                 >
                   <h3 className="text-center">{t.name}</h3>
