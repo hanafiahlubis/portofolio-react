@@ -48,7 +48,7 @@ const dataProject = [
     id: 5,
     name: "Whats-Al",
     img: "/what-al.png",
-    link: "https://github.com/hanafiahlubis/whats-al",
+    link: "https://github.com/hanafiahlubis/whats-all",
     dectiption:
       "Social media projects that involve sending messages and posting stories would be a great way to connect with friends and family. Users can message each other, post stories, and share photos and videos. This project can also be used to promote a business or organization.",
   },
